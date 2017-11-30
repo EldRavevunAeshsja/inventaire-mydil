@@ -1,0 +1,103 @@
+/* ========================================= */
+/* ========================================= */
+/* === HEADER ============================== */
+/* ========================================= */
+/* ========================================= */
+
+#header {
+  height: 200px;
+  border-bottom: 1px solid #3E5665;
+
+  background-color: #10A5F5;
+}
+
+#header_logo {
+  float: left;
+  margin-top: 8px;
+  margin-left: 20px;
+
+  width: 260px;
+  height: 180px;
+}
+
+#header_titre {
+  float: left;
+  margin-top: 18px;
+
+  color: black;
+  font-size: 350%;
+  text-align: center;
+  font-family: 'breeserif';
+}
+
+#header_compte {
+  float: right;
+  margin-top: 45px;
+  margin-right: 20px;
+}
+.header_bouton {
+  width: 200px;
+  height: 40px;
+  padding-top: 4px;
+
+  display: block;
+  box-sizing: border-box;
+  border: 2px solid white;
+  border-radius: 15px;
+
+  color:#fff;
+  font-size: 120%;
+  text-align: center;
+  text-decoration: none;
+  font-family: 'breeserif';
+  background-color: #10A5F5;
+}
+.header_bouton:hover {
+  color: #10A5F5;
+  background-color: white;
+}
+
+
+/* ========================================= */
+/* ========================================= */
+/* === NAVIGUATION ========================= */
+/* ========================================= */
+/* ========================================= */
+
+#naviguation {
+  height: 30px;
+  background-color: white;
+
+  border-bottom: 1px solid #3E5665;
+}
+
+#naviguation_menu {
+  float: left;
+  margin-top: 4px;
+  margin-left: -700px;
+
+  color: #898989;
+}
+
+.naviguation_nav {
+  color: #898989;
+  text-decoration: none;
+
+  font-family: 'breeserif';
+}
+.naviguation_nav:hover {
+  color: black;
+  text-decoration: underline;
+}
+
+#naviguation_recherche {
+  float: right;
+  margin-top: 2.5px;
+  margin-right: 30px;
+}
+
+#naviguation_rechercher {
+  width: 200px;
+  font-size: 110%;
+  font-family: 'greyscale';
+}

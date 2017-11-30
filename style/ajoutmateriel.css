@@ -1,0 +1,88 @@
+/* ========================================= */
+/* ========================================= */
+/* === BODY ============================== */
+/* ========================================= */
+/* ========================================= */
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: silver;
+}
+
+
+
+/* ========================================= */
+/* ========================================= */
+/* === FORMULAIRE ========================== */
+/* ========================================= */
+/* ========================================= */
+
+#form {
+  height: 600px;
+  display: block;
+  text-align: center;
+}
+
+#form_titre {
+  display: block;
+  text-align: center;
+
+  color: black;
+  font: bold 13px;
+  font-size: 280%;
+  font-family: 'breeserif';
+}
+#form_desc {
+  display: block;
+  text-align: center;
+
+  color: #3E5665;
+  font-size: 120%;
+  font-family: 'greyscale';
+  margin-bottom: 40px;
+}
+
+.form_champ {
+  width: 300px;
+  height: 30px;
+  padding-left: 1%;
+
+  font-size: 14px;
+  font-family: 'breeserif';
+  border-radius: 4px;
+  border: 1px solid #3E5665;
+  background-color: white;
+}
+#form_champ_desc {
+  padding-left: 1%;
+
+  font-size: 14px;
+  font-family: 'breeserif';
+  border-radius: 4px;
+  border: 1px solid #3E5665;
+}
+
+#form_envoyer {
+  display: block;
+  box-sizing: border-box;
+  border: 2px solid white;
+  border-radius: 8px;
+  padding-top: -10px;
+  color:#fff;
+  font-family: 'breeserif';
+  font-size: 125%;
+  background-color: #10A5F5;
+
+  width: 175px;
+  height: 40px;
+  margin-top: 1.5%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#form_envoyer:hover {
+  color: #10A5F5;
+  background-color: #fff;
+  border: 2px solid #10A5F5;
+}

@@ -1,0 +1,17 @@
+/* Déclaration des polices d'écriture */
+@font-face {
+  font-family: 'greyscale';
+  src: url('fonts/greyscale.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'greyscale_bold';
+  src: url('fonts/greyscale_bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'moderna';
+  src: url('fonts/moderna.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'breeserif';
+  src: url('fonts/breeserif.otf') format('opentype');
+}

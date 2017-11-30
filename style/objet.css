@@ -1,0 +1,85 @@
+body {
+  margin: 0;
+  padding: 0;
+
+  background-color: silver;
+
+}
+
+#table {
+  display: block;
+  text-align: center;
+  font-size: 120%;
+  margin-bottom: 10%;
+  border: 2px solid black;
+}
+
+.champ {
+  font-size: large;
+  text-decoration: underline;
+  font-family: 'breeserif';
+}
+
+#titre {
+  width: 625px;
+  height: 75px;
+  font-size: 175%;
+  font-family: 'breeserif';
+  text-decoration: underline;
+
+  margin: auto;
+}
+
+#image {
+  width: 40%;
+  height: 10%;
+  float: left;
+  margin-left: 5%;
+}
+
+
+
+
+
+#description {
+  width: 625px;
+  height: 100px;
+  float: right;
+  margin-right: 10%;
+}
+
+#etat {
+  width: 625px;
+  height: 100px;
+  float: right;
+  margin-right: 10%;
+
+}
+
+#categorie {
+  width: 625px;
+  height: 100px;
+  float: right;
+  margin-right: 10%;
+}
+
+#souscategorie {
+  width: 625px;
+  height: 100px;
+  float: right;
+  margin-right: 10%;
+}
+
+
+
+
+
+#disponibilite {
+  bottom: 0;
+  width: 40%;
+  height: 10%;
+  position: fixed;
+  margin: auto;
+}
+
+a
