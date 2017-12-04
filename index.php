@@ -19,8 +19,6 @@ if (isset($_SESSION['id'])) {
   $class = $userinfo['class'];
   $isadmin = $userinfo['isadmin'];
 
-
-
 }
 
 
@@ -50,6 +48,7 @@ if (isset($_SESSION['id'])) {
 
 
   <?php
+<<<<<<< HEAD
     $req = $bdd -> prepare("SELECT * FROM stock WHERE estdispo = ?");
     $req -> execute(array(1));
     $nombre = $req -> rowCount();
@@ -96,6 +95,63 @@ if (isset($_SESSION['id'])) {
       }
        ?>
    </div>
+=======
+  $req = $bdd -> prepare("SELECT * FROM stock WHERE estdispo = ?");
+  $req -> execute(array(1));
+  $nombre = $req -> rowCount();
+  ?>
+
+  <div><?php echo $objInfos['nom']; echo " ";echo $objInfos['etat'];?></div></br>
+  <?php
+}
+?>
+
+<div id="section">
+  <?php
+
+
+  for($i = 1; $i <= $nombre; $i++) {
+    $reqObj = $bdd -> prepare("SELECT * FROM stock WHERE id = ?");
+    $reqObj -> execute(array($i));
+    $objInfos = $reqObj -> fetch();
+
+    $objetid = $objInfos['id'];
+    $objetnom = $objInfos['nom'];
+    $objetdesc = $objInfos['description'];
+    $objetdispo = $objInfos['estdispo'];
+    $objetdateretour = $objInfos['dateretour'];
+    $objetetat = $objInfos['etat'];
+    $objetcategorie = $objInfos['categorie'];
+    $objetsouscategorie = $objInfos['souscategorie'];
+    $objetimage = $objInfos['photos'];
+
+  ?>
+
+
+    <div id="photo">
+      <h1> <?php echo $objInfos['nom']; ?> </h1>
+      <h2> <?php
+            if($objetdispo == 1){
+              echo "Disponible";
+            }else{
+              echo "Indisponible, date de retour : "; echo $objetdateretour;
+            }
+            ?>
+      </h2>
+      <h3> <?php echo $objInfos['categorie']; ?> </h3>
+      <h4> <?php echo $objInfos['souscategorie']; ?> </h4>
+      <img src="<?php echo $objetimage ; ?>">
+
+
+    </div> </br>";
+
+    <?php
+    }
+    ?>
+
+
+  </div>
+>>>>>>> 24d8bf13a75a8eafcf142594c52d1177178783c1
 </body>
 
 </html>
