@@ -23,6 +23,7 @@ if (isset($_SESSION['id'])) {
 ?>
 
 
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -38,38 +39,33 @@ if (isset($_SESSION['id'])) {
 <!-- Corps de la page -->
 <body>
 
+
   <?php
   include('includes/header.php');
   ?>
 
-  <div id="section">
-    <div class="boite">1</div>
-    <div class="boite">2</div>
-    <div class="boite">3</div>
-    <div class="boite">4</div>
-    <div class="boite">5</div>
-    <div class="boite">6</div>
-    <div class="boite">7</div>
-    <div class="boite">8</div>
-    <div class="boite">9</div>
-    <div class="boite">11</div>
-    <div class="boite">12</div>
-    <div class="boite">13</div>
-    <div class="boite">14</div>
-    <div class="boite">15</div>
-    <div class="boite">16</div>
-    <div class="boite">17</div>
-    <div class="boite">18</div>
-    <div class="boite">19</div>
-    <div class="boite">20</div>
-    <div class="boite">21</div>
-    <div class="boite">22</div>
-    <div class="boite">23</div>
-    <div class="boite">24</div>
-    <div class="boite">25</div>
-    <div class="boite">26</div>
-  </div id="section">
 
+  <?php
+  $req = $bdd -> prepare("SELECT * FROM stock WHERE estdispo = ?");
+  $req -> execute(array(1));
+  $nombre = $req -> rowCount();
+
+  echo $nombre;
+  ?>
+
+
+  <?php
+
+
+  for($i = 1; $i <= $nombre; $i++) {
+    $reqObj = $bdd -> prepare("SELECT * FROM stock WHERE id = ?");
+    $reqObj -> execute(array($i));
+    $objInfos = $reqObj -> fetch();
+    ?>
+    <div><?php echo $objInfos['nom']; echo " ";echo $objInfos['etat'];?></div></br>
+    <?php
+  }
+   ?>
 
 
 
