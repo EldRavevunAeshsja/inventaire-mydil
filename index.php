@@ -74,7 +74,8 @@ if (isset($_SESSION['id'])) {
       $objetimage = $objInfos['photos'];
 
       ?>
-      <div id="photo">
+      <a href= "objet.php?id=<?php echo $objetid; ?>">
+        <div id="photo">
         <h1> <?php echo $objInfos['nom']; ?> </h1>
         <h2>
           <?php
@@ -90,6 +91,7 @@ if (isset($_SESSION['id'])) {
 
 
         </div> </br>
+      </a>
         <?php
       }
       ?>
