@@ -21,11 +21,13 @@ if (isset($_POST['ajouterobjetform'])) {
   define('WIDTH_MAX', 5000);    // Largeur max de l'image en pixels
   define('HEIGHT_MAX', 5000);    // Hauteur max de l'image en pixels
 
+
   // Tableaux de donnees
   $tabExt = array('png','jpg','gif','jpeg');    // Extensions autorisees
   $infosImg = array();
 
   // Variables
+  $nomfichier = md5(uniqid());
   $extension = '';
   $message = '';
   $nomImage = '';
@@ -63,7 +65,7 @@ if (isset($_POST['ajouterobjetform'])) {
           if(isset($_FILES['fichier']['error']) && UPLOAD_ERR_OK === $_FILES['fichier']['error']) {
 
             // On renomme le fichier
-            $nomImage = md5(uniqid()) .'.'. $extension;
+            $nomImage = $nomfichier.".".$extension;
 
             // Si c'est OK, on teste l'upload
             if(move_uploaded_file($_FILES['fichier']['tmp_name'], TARGET.$nomImage)) {
@@ -93,7 +95,7 @@ if (isset($_POST['ajouterobjetform'])) {
     }
 
     $insertobject = $bdd -> prepare("INSERT INTO stock(nom, description, etat, categorie, souscategorie, dateretour, estdispo, photos) VALUES(?, ?, ?, ?, ?, ?, ?, ?)");
-    $insertobject -> execute(array($name, $desc, $etat, $category, $subcategory, NULL, 1, "image"));
+    $insertobject -> execute(array($name, $desc, $etat, $category, $subcategory, NULL, 1, "images/".$nomfichier));
 
   } else {
     $message = "Veuillez remplir tout les champs !";
