@@ -101,11 +101,7 @@ if (isset($_SESSION['id'])) {
     $nombre = $req -> rowCount();
     ?>
 
-    <div><?php echo $objInfos['nom']; echo " ";echo $objInfos['etat'];?></div></br>
 
-    <?php
-  }
-  ?>
 
   <div id="section">
     <?php
