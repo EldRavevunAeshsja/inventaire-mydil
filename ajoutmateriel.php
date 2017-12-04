@@ -43,63 +43,54 @@ if (isset($_POST['ajouterobjetform'])) {
 
 
   // On vérifie qu'aucun champ ne soit vide :
-  if (!empty($name) AND !empty($desc) AND !empty($etat) AND !empty($category) AND !empty($subcategory) AND !empty($_POST) AND !empty($_FILES['fichier']['name']) )
-  {
+  if (!empty($name) AND !empty($desc) AND !empty($etat) AND !empty($category) AND !empty($subcategory) AND !empty($_POST) AND !empty($_FILES['fichier']['name']) ) {
     // Recuperation de l'extension du fichier
     $extension  = pathinfo($_FILES['fichier']['name'], PATHINFO_EXTENSION);
 
     // On verifie l'extension du fichier
-    if(in_array(strtolower($extension),$tabExt))
-    {
+    if(in_array(strtolower($extension),$tabExt)) {
+
       // On recupere les dimensions du fichier
       $infosImg = getimagesize($_FILES['fichier']['tmp_name']);
 
       // On verifie le type de l'image
-      if($infosImg[2] >= 1 && $infosImg[2] <= 50)
-      {
+      if($infosImg[2] >= 1 && $infosImg[2] <= 50) {
+
         // On verifie les dimensions et taille de l'image
-        if(($infosImg[0] <= WIDTH_MAX) && ($infosImg[1] <= HEIGHT_MAX) && (filesize($_FILES['fichier']['tmp_name']) <= MAX_SIZE))
-        {
+        if(($infosImg[0] <= WIDTH_MAX) && ($infosImg[1] <= HEIGHT_MAX) && (filesize($_FILES['fichier']['tmp_name']) <= MAX_SIZE)) {
+
           // Parcours du tableau d'erreurs
-          if(isset($_FILES['fichier']['error']) && UPLOAD_ERR_OK === $_FILES['fichier']['error'])
-          {
+          if(isset($_FILES['fichier']['error']) && UPLOAD_ERR_OK === $_FILES['fichier']['error']) {
+
             // On renomme le fichier
             $nomImage = md5(uniqid()) .'.'. $extension;
 
             // Si c'est OK, on teste l'upload
-            if(move_uploaded_file($_FILES['fichier']['tmp_name'], TARGET.$nomImage))
-            {
+            if(move_uploaded_file($_FILES['fichier']['tmp_name'], TARGET.$nomImage)) {
               $message = 'Upload réussi !';
-            }
-            else
-            {
+            } else {
               // Sinon on affiche une erreur systeme
               $message = 'Problème lors de l\'upload !';
             }
-          }
-          else
-          {
+
+          } else {
             $message = 'Une erreur interne a empêché l\'uplaod de l\'image';
           }
-        }
-        else
-        {
+
+        } else {
           // Sinon erreur sur les dimensions et taille de l'image
           $message = 'Erreur dans les dimensions de l\'image !';
         }
-      }
-      else
-      {
+
+      } else {
         // Sinon erreur sur le type de l'image
         $message = 'Image trop grande !';
       }
-    }
-    else
-    {
+
+    } else {
       // Sinon on affiche une erreur pour l'extension
       $message = 'L\'extension du fichier est incorrecte !';
     }
-
 
     $insertobject = $bdd -> prepare("INSERT INTO stock(nom, description, etat, categorie, souscategorie, dateretour, estdispo, photos) VALUES(?, ?, ?, ?, ?, ?, ?, ?)");
     $insertobject -> execute(array($name, $desc, $etat, $category, $subcategory, NULL, 1, "image"));
@@ -107,11 +98,13 @@ if (isset($_POST['ajouterobjetform'])) {
   } else {
     $message = "Veuillez remplir tout les champs !";
   }
+
 }
 
-
-
 ?>
+
+
+
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -173,13 +166,14 @@ if (isset($_POST['ajouterobjetform'])) {
         <br/><br/>
       </form>
 
+
       <?php
-        if (isset($erreur))
+        if (isset($message))
         {
           echo '<font color="red">'.$message.'</font>';
         }
-      ?>
-      <br/>
+      ?> <br/>
+
 
     </div>
 
