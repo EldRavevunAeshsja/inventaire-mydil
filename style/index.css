@@ -7,13 +7,23 @@
 body {
   margin: 0;
   padding: 0;
-
   background-color: silver;
 }
 
 
-section {
-  width: 50%;
+#section {
+  width: auto;
   display: flex;
   flex-wrap: wrap;
+  border: 1px solid red;
+  justify-content: center;
+  margin: 5px;
+}
+
+#photo{
+  height: 400px;
+  width: 400px;
+  border : solid black 1px;
+  text-align: center;
+  margin: 5px;
 }

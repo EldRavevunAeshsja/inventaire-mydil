@@ -39,37 +39,42 @@ if (isset($_SESSION['id'])) {
 <!-- Corps de la page -->
 <body>
 
-
   <?php
   include('includes/header.php');
   ?>
 
 
-  <?php
-  $req = $bdd -> prepare("SELECT * FROM stock WHERE estdispo = ?");
-  $req -> execute(array(1));
-  $nombre = $req -> rowCount();
-
-  echo $nombre;
-  ?>
-
 
   <?php
+    $req = $bdd -> prepare("SELECT * FROM stock WHERE estdispo = ?");
+    $req -> execute(array(1));
+    $nombre = $req -> rowCount();
 
-
-  for($i = 1; $i <= $nombre; $i++) {
-    $reqObj = $bdd -> prepare("SELECT * FROM stock WHERE id = ?");
-    $reqObj -> execute(array($i));
-    $objInfos = $reqObj -> fetch();
+    echo $nombre;
     ?>
+<<<<<<< HEAD
     <div><?php echo $objInfos['nom']; echo " ";echo $objInfos['etat'];?></div></br>
     <?php
   }
 // Valentin Test
    ?>
+=======
+>>>>>>> a12eaf6fb7c85d4769d27c5f974b5415b0b1fa9a
+
+    <div id="section">
+      <?php
 
 
-
+      for($i = 1; $i <= $nombre; $i++) {
+        $reqObj = $bdd -> prepare("SELECT * FROM stock WHERE id = ?");
+        $reqObj -> execute(array($i));
+        $objInfos = $reqObj -> fetch();
+        ?>
+        <div id="photo"><?php echo $objInfos['nom']; echo $objInfos['etat'];?></div></br>";
+        <?php
+      }
+       ?>
+   </div>
 </body>
 
 </html>
