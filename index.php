@@ -52,6 +52,14 @@ if (isset($_SESSION['id'])) {
 
     echo $nombre;
     ?>
+<<<<<<< HEAD
+    <div><?php echo $objInfos['nom']; echo " ";echo $objInfos['etat'];?></div></br>
+    <?php
+  }
+// Valentin Test
+   ?>
+=======
+>>>>>>> a12eaf6fb7c85d4769d27c5f974b5415b0b1fa9a
 
     <div id="section">
       <?php
