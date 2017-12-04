@@ -65,6 +65,7 @@ if (isset($_SESSION['id'])) {
     <div><?php echo $objInfos['nom']; echo " ";echo $objInfos['etat'];?></div></br>
     <?php
   }
+// Valentin Test
    ?>
 
 
