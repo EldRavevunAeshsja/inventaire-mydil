@@ -99,6 +99,7 @@ if (isset($_SESSION['id'])) {
     $req = $bdd -> prepare("SELECT * FROM stock WHERE estdispo = ?");
     $req -> execute(array(1));
     $nombre = $req -> rowCount();
+    //arthur le moche
     ?>
 
 
